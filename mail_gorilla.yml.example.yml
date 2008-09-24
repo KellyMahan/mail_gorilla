@@ -1,0 +1,9 @@
+production:
+  username: username
+  password: password
+development:
+  username: username
+  password: password
+test:
+  username: username
+  password: password
