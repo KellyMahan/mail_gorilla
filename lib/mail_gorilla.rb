@@ -44,6 +44,13 @@ class MailGorilla
     @templates = @chimpApi.call("campaignTemplates", @api_key)
   end
   
+  def get_merge_vars(list_id)
+    @merge_vars = @chimpApi.call("listMergeVars", @api_key, list_id)
+  end
+  
+  def add_merge_var(list_id, tag, name, req = false)
+    @merge_var = @chimpApi.call("listMergeVarAdd", @api_key, list_id, tag, name, req)
+  end
 
   def batch_subscribe(list_id, info_array)
     # => info_array is an array of hashes that must contain {:EMAIL=>"",:EMAIL_TYPE=>""} 
